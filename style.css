@@ -1,17 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/*
-  1. Use a more-intuitive box-sizing model.
-*/
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-/*
-    2. Remove default margin
-  */
 * {
     margin: 0;
     padding: 0;
@@ -19,19 +13,12 @@
     scroll-behavior: smooth;
 }
 
-/*
-    Typographic tweaks!
-    3. Add accessible line-height
-    4. Improve text rendering
-  */
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    font-family: "Poppins", sans-serif;
 }
 
-/*
-    5. Improve media defaults
-  */
 img,
 picture,
 video,
@@ -41,9 +28,6 @@ svg {
     max-width: 100%;
 }
 
-/*
-    6. Remove built-in form typography styles
-  */
 input,
 button,
 textarea,
@@ -51,9 +35,6 @@ select {
     font: inherit;
 }
 
-/*
-    7. Avoid text overflows
-  */
 p,
 h1,
 h2,
@@ -68,27 +49,19 @@ li {
     list-style: none;
 }
 
-/* Assets */
-
 :root {
-    /* colors */
     --clr-light-green-400: #66BB6A;
-    /* replaced light blue 400 */
     --clr-light-green-300: #68c86d;
     --clr-dark-green: #299431;
-    /* replaced dark blue */
     --clr-light-red: #ec4c4c;
     --clr-light-grey: #bebebec9;
     --clr-light-grey-300: #ffffffed;
     --clr-light-green-800: #C8E6C9;
-    /* replaced light blue 800 */
     --clr-white: #f0f0f0;
-    /* fonts */
-    font-family: "Poppins", sans-serif;
 }
 
 html {
-    font-style: var(--ff-primary-fonts);
+    font-style: normal;
 }
 
 .container {
@@ -109,20 +82,22 @@ nav ul {
     border-radius: 15px;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 20px 40px;
 }
 
 nav ul li h2 {
     font-size: 28px;
     color: rgba(23, 23, 23, 0.874);
+    text-align: center;
 }
-
 
 .container .game-display {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 50px;
+    padding: 20px;
 }
 
 .container .game-display .game-card {
@@ -131,14 +106,12 @@ nav ul li h2 {
     border-radius: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: var(--clr-light-grey-300);
-
 }
 
 .container .game-display .game-card .games {
     display: flex;
     flex-direction: column;
     padding: 30px 70px;
-
 }
 
 .container .game-display .game-card .games .inputs h5 {
@@ -148,6 +121,7 @@ nav ul li h2 {
     font-size: 22px;
     margin-bottom: 30px;
 }
+
 .container .game-display .game-card .games .inputs h3 {
     color: #2b2b2b;
     text-align: center;
@@ -161,12 +135,11 @@ nav ul li h2 {
     justify-content: center;
     margin: 20px 0px 40px 0px;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
-
-.game-card .games .inputs .fields .guess-input-filed {
+.guess-input-filed {
     padding: 8px 12px;
-    box-sizing: border-box;
     border: 1.5px solid #686868;
     border-radius: 10px;
     background-color: var(--clr-white);
@@ -174,15 +147,16 @@ nav ul li h2 {
     color: var(--clr-dark-green);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s, box-shadow 0.3s;
+    width: 200px;
+    max-width: 100%;
 }
 
-.game-card .games .inputs .fields .guess-input-filed:focus {
+.guess-input-filed:focus {
     border-color: #656565;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-
 }
 
-.game-card .games .inputs .fields .design-guess {
+.design-guess {
     border-radius: 5px;
     color: var(--clr-white);
     font-size: 16px;
@@ -193,11 +167,11 @@ nav ul li h2 {
     border: none;
 }
 
-.game-card .games .inputs .fields .design-guess:hover {
+.design-guess:hover {
     cursor: pointer;
 }
 
-.container .game-display .game-card .games .outputs {
+.outputs {
     display: flex;
     flex-direction: column;
     background-color: rgb(218, 218, 218);
@@ -205,50 +179,47 @@ nav ul li h2 {
     padding: 20px 30px;
 }
 
-.container .game-display .game-card .games .outputs h6 {
+.outputs h6 {
     font-size: 20px;
     margin-bottom: 8px;
     color: orangered;
 }
 
-.container .game-display .game-card .games .outputs p {
+.outputs p {
     font-size: 18px;
     font-weight: 600;
     color: rgb(35, 35, 35);
 }
 
-.container .game-display .game-card .games .outputs p span {
+.outputs p span {
     font-weight: 400;
 }
 
-.games .newgame {
+.newgame {
     display: flex;
-   justify-content: space-between;
+    justify-content: space-between;
     margin: 30px 0px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.games .newgame p {
-
+.newgame p {
     border-radius: 10px;
-    color: var(--clr-white);
     font-size: 16px;
     font-weight: 500;
     padding: 8px 12px;
     background-color: var(--clr-dark-green);
-    outline: none;
-    border: none;
     color: var(--clr-light-grey-300);
-}
- 
-.games .newgame p:hover {
+    border: none;
     cursor: pointer;
 }
 
 .game-display .game-rules {
     background-color: #fafafa;
-    border-radius:  30px;
+    border-radius: 30px;
     width: 95%;
-    margin: 0px auto;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .game-display .game-rules h3 {
@@ -264,7 +235,7 @@ nav ul li h2 {
     margin: 40px auto;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 
 .game-display .game-rules ol li {
@@ -272,8 +243,7 @@ nav ul li h2 {
     font-size: 16px;
     list-style-type: disc;
     list-style-position: inside;
-    padding: 0px 15px;
-
+    padding: 10px 15px;
 }
 
 .game-display .game-rules ol .one {
@@ -284,37 +254,46 @@ nav ul li h2 {
     background-color: #68bd6f;
 }
 
-.container .digital-clock {
+.digital-clock {
     position: fixed;
     bottom: 30px;
     right: 20px;
     max-width: 15%;
-    max-height: 10%;
     background-color: orange;
     display: flex;
     align-items: center;
     gap: 10px;
     justify-content: space-between;
     padding: 8px 12px;
-    border-radius: 10px ;
+    border-radius: 10px;
     z-index: 999;
 }
 
-.container .digital-clock i {
-    font-weight: 700;
-    color: black;
-    font-size: 15px;
-}
-.container .digital-clock p {
+.digital-clock i,
+.digital-clock p {
     color: black;
     font-size: 15px;
     font-weight: 500;
-} 
+}
 
-/* @media screen and (max-width: 400px) {
+@media screen and (max-width: 1024px) {
+    .container .game-display .game-card .games {
+        padding: 20px 40px;
+    }
+
+    .game-display .game-rules ol {
+        width: 90%;
+    }
+
+    nav ul {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
     nav ul {
         flex-direction: column;
-        padding: 10px 20px;
+        padding: 15px 20px;
     }
 
     nav ul li h2 {
@@ -322,55 +301,52 @@ nav ul li h2 {
     }
 
     .container .game-display .game-card {
-        width: 100%;
-        border-radius: 15px;
+        width: 95%;
+        border-radius: 20px;
     }
 
     .container .game-display .game-card .games {
-        padding: 20px 30px;
+        padding: 20px;
+    }
+
+    .guess-input-filed {
+        width: 100%;
+    }
+
+    .digital-clock {
+        bottom: 20px;
+        right: 10px;
+        max-width: 60%;
+        padding: 6px 10px;
+    }
+
+    .digital-clock i,
+    .digital-clock p {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav ul li h2 {
+        font-size: 20px;
     }
 
     .container .game-display .game-card .games .inputs h5 {
         font-size: 18px;
-        margin-bottom: 20px;
     }
 
     .container .game-display .game-card .games .inputs h3 {
         font-size: 16px;
-        margin-bottom: 15px;
     }
 
-    .container .game-display .game-card .games .inputs .fields {
-        flex-direction: column;
-        gap: 10px;
-        margin: 10px 0px 20px 0px;
+    .outputs h6,
+    .outputs p {
+        font-size: 16px;
     }
 
-    .game-card .games .inputs .fields .guess-input-filed {
-        font-size: 14px;
-    }
-
-    .game-card .games .inputs .fields .design-guess {
+    .newgame p {
         font-size: 14px;
         padding: 6px 10px;
-    }
-
-    .container .game-display .game-card .games .outputs h6 {
-        font-size: 16px;
-    }
-
-    .container .game-display .game-card .games .outputs p {
-        font-size: 16px;
-    }
-
-    .games .newgame p {
-        font-size: 14px;
-        padding: 6px 8px;
-    }
-
-    .game-display .game-rules {
-        width: 100%;
-        border-radius: 15px;
     }
 
     .game-display .game-rules h3 {
@@ -379,29 +355,16 @@ nav ul li h2 {
     }
 
     .game-display .game-rules ol {
-        width: 90%;
+        width: 95%;
         margin: 20px auto;
     }
 
     .game-display .game-rules ol li {
         font-size: 14px;
-        padding: 0px 10px;
     }
 
-    .container .digital-clock {
-        width: 90%;
-        bottom: 20px;
-        left: 5%;
-        padding: 5px 10px;
+    .digital-clock {
+        width: 80%;
+        left: 10%;
     }
-
-    .container .digital-clock i {
-        font-size: 13px;
-    }
-
-    .container .digital-clock p {
-        font-size: 13px;
-    }
-} */
-
-
+}
