@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><h2>Guess The Number</h2></li>
+                </ul>
+            </nav>
+
+            <div class="game-display">
+                <div class="game-card">
+                    <form id="game" class="games">
+                        <div class="inputs">
+                            <h5>Begin Guessing and Climb the Scoreboard!</h5>
+                            <h3>We recommend you to read "Rules & Guidelines" before starting the game.</h3>
+                            <div class="fields">
+                                <input type="text" id="user-guess" class="guess-input-filed" placeholder="Enter your guess..">
+                                <input type="submit" value="Guess" class="design-guess" id="Guess">
+                            </div>
+                        </div>
+                        
+                        <div class="outputs">
+                            <h6>Results:</h6>
+                            <p class="previous-guess-list">Previous Guess: <span id="previous-guesses"></span></p>
+                            <p class="attempts">Attempts Left: <span id="attempts-left"></span></p>
+                            <p class="hint">Hints: <span id="hint"></span></p>
+                            <p class="score-card">Score: <span id="socre"></span></p>
+                        </div>
+                        <div class="newgame">
+                            <p><a href="#rules" style="color: #ffffffed;">Rules & Guidelines</a></p>
+                            <p id="newGameBtn">New Game</p>
+                        </div>
+                    </form>
+                </div>
+                <div class="game-rules" id="rules">
+                    <h3>Rules and Guidelines</h3>
+                    <ol>
+                        <li class="one">Enter a number between 1 - 100.</li>
+                        <li class="two">You have a total of 10 attempts to guess the number.</li>
+                        <li class="one">After each guess, you'll receive feedback whether your guess is too high or too low.</li>
+                        <li class="two">If you guess the correct number within 10 attempts, you win the game!</li>
+                        <li class="one">If you don't guess the number in 10 attempts, you lose the game and the correct number will be revealed.</li>
+                        <li class="two">Hints will be provided after every incorrect guess to help you get closer to the correct number.</li>
+                        <li class="one">Guesses must be within the range of 1 to 100. Any guess outside this range will not be counted.</li>
+                        <li class="two">You can restart a new game at any time by clicking the 'New Game' button.</li>
+                        <li class="one">Your number of attempts and the time taken to guess correctly will be recorded as your score.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="digital-clock">
+                <i class="fa-solid fa-clock"></i>
+                <p class="time" id="time"></p>
+            </div>
+        </div>
+</body>
+
+<script src="script.js"></script>
+</html>
